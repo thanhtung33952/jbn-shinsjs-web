@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>SJS 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900&amp;subset=japanese" rel="stylesheet">
+	<link href="../css/index.css" rel="stylesheet">
+	<link href="index.css" rel="stylesheet">
+	<style>
+
+
+	</style>
+</head>
+
+<body onresize="setHeight()">
+
+	<div class="contentContainer">
+		<div class="header">
+			<img id="topLogo" src="../img/sjs2LogoW.png" />
+			<div class="headerInformation">
+				logIn and so on
+			</div>
+		</div>
+
+		<div class="breadCrumb">
+			トップ ＞ ユーザー ＞ 取引先登録
+		</div>
+
+
+		<div class="mainPane">
+
+			<div class="leftPane">
+
+				<!--div class="menuItem " id="item1">このシステムについて</div>
+				<div class="menuItem" id="dashboard">ダッシュボード</div>
+				<div class="info">お申込みはこちらから...</div-->
+				<div class="menuItem selected" id="item2">地盤安心住宅</div>
+				<!--div class="menuItem" id="item3">地盤セカンドオピニオン</div>
+				<div class="menuItem" id="item4">既存住宅地盤補償</div>
+				<div class="menuItem" id="item5">改良工事設計審査補償</div-->
+
+			</div>
+
+			<div class="centerPane">
+
+				<div class="_title">地盤安心住宅の申込み</div>
+				<div class="main-btn flashTopRight disable">保存し、申込む</div>
+
+				<div style="clear: both"></div>
+				
+				<div class="acoordion closed" id="AJA-1">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft iconDone" id="AJA-1-icon">done</span>
+					<div class="bodyTitle">1. お申込者</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">会社名:</span>
+
+								<!-- Search from table 'company' -->
+								<input class="input100" id="com-name" type="text" name="name" placeholder="自動検索します">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="">
+
+								<!-- Search from table 'personInCompany' -->
+								<span class="label-input100 required" id="com-per-name">担当者名:</span>
+								<input class="input100" type="text" name="name" placeholder="">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+								<span class="label-input100">Email:</span>
+								<input class="input100" id="com-per-email" type="text" name="email" placeholder="">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Message is required">
+								<span class="label-input100">連絡先など:</span>
+								<textarea class="input100" id="com-per-more" name="message" placeholder="共通アカウントをご利用の方は担当者名、連絡先携帯番号をご記入ください"></textarea>
+								<!--span class="focus-input100"></span-->
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="acoordion closed" id="AJA-2">
+					<div class="bodyTitle">
+						<span class="material-icons flashRight">help_outline</span>
+						<span class="material-icons flashLeft" id="AJA-2-icon">create</span>2. 地盤品質証明事業者</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">事業者名:</span>
+								<input class="input100" id="cer-name" type="text" name="name" placeholder="自動検索します">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">担当者名:</span>
+								<input class="input100" id="cer-per-name" type="text" name="name" placeholder="">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+								<span class="label-input100">Email:</span>
+								<input class="input100" id="cer-per-email" type="text" name="email" placeholder="">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Message is required">
+								<span class="label-input100">連絡先など:</span>
+								<textarea class="input100" id="cer-per-more" name="message" placeholder="共通アカウントをご利用の方は担当者名、連絡先携帯番号をご記入ください"></textarea>
+								<!--span class="focus-input100"></span-->
+							</div>
+						</div>
+					</form>
+
+
+				</div>
+
+				<div class="acoordion closed" id="AJA-3">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-3-icon">create</span>
+					<div class="bodyTitle">3. 物件情報</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 wrap-line0 validate-input" data-validate="">
+								<span class="label-input100 required">物件名:</span>
+								<input class="input100" id="pro-name" type="text" name="name" placeholder="物件名">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">フリガナ:</span>
+								<input class="input100" id="pro-name-yomi" type="text" name="name" placeholder="フリガナ">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 wrap-line0 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+								<span class="label-input100 required">申込棟数:</span>
+								<input class="input100 input50" id="pro-buld-num" type="text" name="email" placeholder=""> 棟
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+								<span class="label-input100">区割り:</span>
+								<input class="input100" id="pro-kuwari" type="text" name="email" placeholder="例：A区画">
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 wrap-line0 validate-input" data-validate="">
+								<span class="label-input100 required">所在地　都道府県:</span>
+								<input class="input100" id="pro-address-1" type="text" name="name" placeholder="都道府県">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 wrap-line0 validate-input" data-validate="">
+								<span class="label-input100 required">市区郡:</span>
+								<input class="input100" id="pro-address-2" type="text" name="name" placeholder="市区郡">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">地名番地:</span>
+								<input class="input100" id="pro-address-3" type="text" name="name" placeholder="地名番地">
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 required">位置情報:</span>
+								<input class="input100 halfWidth" id="pro-rat-lng" type="text" name="name" placeholder="緯度経度"> <span class="contact100-form-btn">地図を表示</span>
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">工事番号:</span>
+								<input class="input100" id="pro-id" type="text" name="name" placeholder="工事番号">
+								<span class="focus-input100"></span>
+							</div>
+
+						</div>
+					</form>
+
+				</div>
+
+				<div class="acoordion closed" id="AJA-4">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-4-icon">create</span>
+					<div class="bodyTitle">4. 調査希望内容</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">予定調査会社:</span>
+								<input class="input100" id="inv-company" type="text" name="name" placeholder="指定しない">
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">希望調査日:</span>
+								<div class="tab">
+									<!-- inv-date-time -->
+									<div class="tablinks tabSelected" id="inv-tab-1" onclick="openDate('day-time')">日時を指定</div>
+									<div class="tablinks" id="inv-tab-2" onclick="openDate('any')">いつでも</div>
+									<div class="tablinks" id="inv-tab-3" onclick="openDate('nearest')">最短日</div>
+								</div>
+
+								<div id="day-time" class="tabcontent">
+									<span class=" required">第一希望</span><br />
+									<input class="dateP" id="inv-date-10" type="date" value="today" />〜
+									<input class="dateP" id="inv-date-11" type="date" value="today" />
+									<select class="AJA-select" name="cars" id="inv-time-1">
+									  <option value="10:00">10:00</option>
+									  <option value="10:30">10:30</option>
+									  <option value="11:00">11:00</option>
+									  <option value="11:30">11:30</option>
+									</select><br /> 第2希望
+									<br />
+									<input class="dateP" id="inv-date-20" type="date" value="today" />〜
+									<input class="dateP" id="inv-date-21" type="date" value="today" />
+									<select name="cars" id="inv-time-2">
+									  <option value="10:00">10:00</option>
+									  <option value="10:30">10:30</option>
+									  <option value="11:00">11:00</option>
+									  <option value="11:30">11:30</option>
+									</select>
+								</div>
+
+								<div id="any" class="tabcontent">
+									時間指定：
+									<select name="cars" id="inv-time-3">
+									  <option value="10:00">10:00</option>
+									  <option value="10:30">10:30</option>
+									  <option value="11:00">11:00</option>
+									  <option value="11:30">11:30</option>
+									</select>
+								</div>
+
+								<div id="nearest" class="tabcontent">
+									時間指定：
+									<select name="cars" id="inv-time-4">
+									  <option value="10:00">10:00</option>
+									  <option value="10:30">10:30</option>
+									  <option value="11:00">11:00</option>
+									  <option value="11:30">11:30</option>
+									</select>
+								</div>
+
+
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">調査方法:</span>
+								<span class="inv-method">SS試験（グラウンドプロ）希望</span>
+								<span class="inv-method">SS試験（IGP）希望</span>
+								<span class="inv-method">SS試験（半自動）希望</span>
+								<span class="inv-method">SS試験（手回し）希望</span>
+								<span class="inv-method">SS試験（全自動）希望</span>
+								<span class="inv-method">表面波探査希望</span>
+								<span class="inv-method">ボーリング調査希望</span>
+								<span class="inv-method">その他</span>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">立会い:</span>
+								<span class="inv-attend">なし</span>
+								<span class="inv-attend">あり</span>
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+
+				<div class="acoordion closed" id="AJA-5">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-5-icon">create</span>
+					<div class="bodyTitle">5. 建物概要</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">瑕疵担保責任<br />保険法人:</span>
+
+								<span class="build-cer">JIO</span>
+								<span class="build-cer">住宅あんしん</span>
+								<span class="build-cer">ハウスプラン</span>
+								<span class="build-cer">供託</span>
+								<span class="build-cer">ハウスジーメンス</span>
+								<span class="build-cer">まもりすまい</span>
+								<span class="build-cer">未定</span>
+								<span class="build-cer">その他</span>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">建築確認申請機関:</span>
+								<span class="build-app">日本ERI</span>
+								<span class="build-app">UDI</span>
+								<span class="build-app">未定</span>
+								<span class="build-app">その他</span>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">建物構造:</span>
+								<span class="build-str">木造</span>
+								<span class="build-str">鉄骨造</span>
+								<span class="build-str">RC造</span>
+								<span class="build-str">鉄骨木造混構造</span>
+								<span class="build-str">RC木造混構造</span>
+								<span class="build-str">その他</span>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">建物階数:</span>
+								<span class="build-floor">平屋建</span>
+								<span class="build-floor">２階建</span>
+								<span class="build-floor">３階建</span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">延床面積:</span>
+								<input class="input100 halfWidth" id="build-squ" type="text" name="name" placeholder="延床面積"> m<sup>2</sup>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">設計接地圧:</span>
+								<span class="build-pre">20</span>
+								<span class="build-pre">25</span>
+								<span class="build-pre">30</span>
+								<span class="build-pre">35</span>
+								<span class="build-pre">40</span>
+								<span class="build-pre">45</span>
+								<span class="build-pre">50</span> kN/m<sup>2</sup>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">建物区分:</span>
+								<span class="build-type">新築</span>
+								<span class="build-type">建替え</span>
+								<span class="build-type">その他</span>
+							</div>
+						</div>
+
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100">用途区分:</span>
+								<span class="build-use">居住専用</span>
+								<span class="build-use">店舗併用</span>
+								<span class="build-use">集合住宅</span>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="acoordion closed" id="AJA-6">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-6-icon">create</span>
+					<div class="bodyTitle">6. 予定基礎</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+							<div class="wrap-input100 validate-input" data-validate="">
+
+								<span class="label-input100">基礎形状:</span>
+
+								<span class="base-type">ベタ基礎</span>
+								<span class="base-type">布基礎</span>
+								<span class="base-type">SCR基礎</span>
+								<span class="base-type">逆ベタ布基礎</span>
+								<span class="base-type">独立基礎</span>
+								<span class="base-type">その他</span>
+								<span class="focus-input100"></span>
+
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">根切り深度:</span>
+								<input class="input100 halfWidth" id="base-root" type="text" name="name" placeholder="GL " /> m <input type='checkbox' class="fCheck" /> 深基礎対応可
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 required">基礎工事予定:</span>
+								<span class="base-sch">未定</span>
+								<span class="base-sch">予定</span>
+								<input class="dateP" id="base-sch-date" type="date" value="today" />
+								<span class="focus-input100"></span>
+							</div>
+
+						</div>
+					</form>
+				</div>
+
+				<div class="acoordion closed" id="AJA-7">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-7-icon">create</span>
+					<div class="bodyTitle">7. 搬入条件、高さ障害</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">スロープ:</span>
+								<span class="carry-slope">なし</span>
+								<span class="carry-slope">あり</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 validate-input" data-validate="">
+								<span class="label-input100 required">現場状況:</span>
+								<span class="carry-sta">更地</span>
+								<span class="carry-sta">既存建物あり</span>
+								<span class="carry-sta">はつり要（アスファルト5cm内）</span>
+								<span class="carry-sta">雑草あり（10cm以上）</span>
+								<span class="carry-sta">積雪あり（10cm以上）</span>
+								<span class="carry-sta">その他</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 required">高さ障害:</span>
+								<span class="carry-bar">なし</span>
+								<span class="carry-bar">あり</span>
+								<span class="focus-input100"></span>
+							</div>
+
+
+
+						</div>
+					</form>
+
+				</div>
+
+				<div class="acoordion closed" id="AJA-8">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-8-icon">create</span>
+					<div class="bodyTitle">8. オプションサービス</div>
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">SBI 建築確認申請:</span>
+								<span class="opt-app">利用する</span>
+								<span class="opt-app">利用しない</span> 　（別料金）
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">ASD 目視録:</span>
+								<span class="opt-eye">利用する</span>
+								<span class="opt-eye">利用しない</span> 　（別料金）
+								<span class="focus-input100"></span>
+							</div>
+
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">JIBANGOO掲載:</span>
+								<span class="opt-jibangoo">掲載する</span>
+								<span class="opt-jibangoo">掲載しない</span> 　（無料）
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+				<div class="acoordion closed" id="AJA-9">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-9-icon">create</span>
+					<div class="bodyTitle">9. 添付資料</div>
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 required">現場案内図：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">建物図面一式：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">現場写真：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">その他：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">仮設資材依頼書：</span>
+								<span class="upload-item">アップロード</span>　仮設図を含む
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 smallFont">設計チェックリスト：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">工事設計図：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">工事見積書：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">工事検討書：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">工事報告書：</span>
+								<span class="upload-item">アップロード</span>
+								<span class="focus-input100"></span>
+							</div>
+
+						</div>
+
+					</form>
+
+				</div>
+
+				<div class="acoordion closed" id="AJA-10">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-10-icon">create</span>
+					<div class="bodyTitle">10. 連絡事項</div>
+
+					<div id="comment">
+						<textarea cols="80" rows="6"></textarea>
+					</div>
+				</div>
+
+				<div class="acoordion closed" id="AJA-11">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-11-icon">create</span>
+					<div class="bodyTitle">11. 申込区分</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 required">申込区分:</span>
+								<span class="cla-app">なし</span>
+								<span class="cla-app">あり</span>
+								<span class="focus-input100"></span>
+							</div>
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100 required">証明期間:</span>
+								<span class="cla-dur">なし</span>
+								<span class="cla-dur">あり</span>
+								<span class="focus-input100"></span>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+				<div class="acoordion closed" id="AJA-12">
+					<span class="material-icons flashRight">help_outline</span>
+					<span class="material-icons flashLeft" id="AJA-12-icon">create</span>
+					<div class="bodyTitle">12. 改良工事判定の場合</div>
+
+					<form class="contact100-form validate-form">
+						<div class="validate-input" data-validate="">
+
+							<div class="wrap-input100 focus-and validate-input" data-validate="">
+								<span class="label-input100">見積書:</span>
+								<span class="estimate">必要</span>
+								<span class="estimate">不要</span>
+								<span class="focus-input100"></span>
+							</div>
+
+						</div>
+					</form>
+
+
+
+				</div>
+
+
+
+
+
+				<div class="bottom-btn-field">
+					<div class="main-btn flashRight disable">保存し、申込む</div>
+				</div>
+
+
+
+
+			</div>
+			<!-- End of centerPane -->
+
+
+			<div class="rightPane">
+				<div class="bodyTitle" id="rightPaneTitle">「地盤安心住宅」について...</div>
+
+				<div class="rightContent" id="r0">
+					「地盤安心住宅」について...
+				</div>
+
+				<div class="rightContent" id="r1">
+					「地盤安心住宅」をお申し込みされる方の情報をご記入ください。
+				</div>
+
+				<div class="rightContent" id="r2">
+					地盤の品質証明をする事業者について、ご記入ください。
+				</div>
+
+				<div class="rightContent" id="r3">
+					物件に関する情報をご記入ください。<br /> 位置情報は、地図上のマーカーを移動させてください。
+				</div>
+
+				<div class="rightContent" id="r4">
+					地盤調査について、調査する日時、調査方法など、ご記入ください。
+				</div>
+
+				<div class="rightContent" id="r5">
+					建物の概要について、お知らせください。<br /> 瑕疵担保責任保険法人、建築確認申請機関は必ずお選びください。
+				</div>
+
+				<div class="rightContent" id="r6">
+					基礎の現在の状態をご記入ください。<br /> また、基礎の改良工事を予定している場合、その時期もお知らせください。
+				</div>
+
+				<div class="rightContent" id="r7">
+					調査地の様子をおしらせください。<br /> 最適な機材を用意します。
+				</div>
+
+				<div class="rightContent" id="r8">
+					JIBANGOO は「安全な地盤にある物件」を紹介する不動産サイトです。<br />
+					<a href="http://jibangoo.jp" target="_new">Jibagoo サイトへ</a>
+				</div>
+
+				<div class="rightContent" id="r9">
+					下の点線内にアップロードするファイルをドロップしてください。<br />
+					<div id="drop4upload"></div>
+				</div>
+
+				<div class="rightContent" id="r10">
+					連絡事項
+				</div>
+
+				<div class="rightContent" id="r11">
+					申込区分とは、......。
+				</div>
+
+				<div class="rightContent" id="r12">
+					地盤改良工事が必要と判定された場合、工事費の見積書が必要かお知らせください。
+				</div>
+
+
+
+				<div class="rightContent" id="moreInfo">
+					<hr /> 都道府県を選んでくささい。
+					<br />
+					<UL id="sPref" value="" selected>
+						<li class="prefecture" value="1">北海道</li>
+						<li class="prefecture" value="2">青森県</li>
+						<li class="prefecture" value="3">岩手県</li>
+						<li class="prefecture" value="4">宮城県</li>
+						<li class="prefecture" value="5">秋田県</li>
+						<li class="prefecture" value="6">山形県</li>
+						<li class="prefecture" value="7">福島県</li>
+						<li class="prefecture" value="8">茨城県</li>
+						<li class="prefecture" value="9">栃木県</li>
+						<li class="prefecture" value="10">群馬県</li>
+						<li class="prefecture" value="11">埼玉県</li>
+						<li class="prefecture" value="12">千葉県</li>
+						<li class="prefecture" value="13">東京都</li>
+						<li class="prefecture" value="14">神奈川県</li>
+						<li class="prefecture" value="15">新潟県</li>
+						<li class="prefecture" value="16">富山県</li>
+						<li class="prefecture" value="17">石川県</li>
+						<li class="prefecture" value="18">福井県</li>
+						<li class="prefecture" value="19">山梨県</li>
+						<li class="prefecture" value="20">長野県</li>
+						<li class="prefecture" value="21">岐阜県</li>
+						<li class="prefecture" value="22">静岡県</li>
+						<li class="prefecture" value="23">愛知県</li>
+						<li class="prefecture" value="24">三重県</li>
+						<li class="prefecture" value="25">滋賀県</li>
+						<li class="prefecture" value="26">京都府</li>
+						<li class="prefecture" value="27">大阪府</li>
+						<li class="prefecture" value="28">兵庫県</li>
+						<li class="prefecture" value="29">奈良県</li>
+						<li class="prefecture" value="30">和歌山県</li>
+						<li class="prefecture" value="31">鳥取県</li>
+						<li class="prefecture" value="32">島根県</li>
+						<li class="prefecture" value="33">岡山県</li>
+						<li class="prefecture" value="34">広島県</li>
+						<li class="prefecture" value="35">山口県</li>
+						<li class="prefecture" value="36">徳島県</li>
+						<li class="prefecture" value="37">香川県</li>
+						<li class="prefecture" value="38">愛媛県</li>
+						<li class="prefecture" value="39">高知県</li>
+						<li class="prefecture" value="40">福岡県</li>
+						<li class="prefecture" value="41">佐賀県</li>
+						<li class="prefecture" value="42">長崎県</li>
+						<li class="prefecture" value="43">熊本県</li>
+						<li class="prefecture" value="44">大分県</li>
+						<li class="prefecture" value="45">宮崎県</li>
+						<li class="prefecture" value="46">鹿児島県</li>
+						<li class="prefecture" value="47">沖縄県</li>
+					</UL>
+				</div>
+			</div>
+
+
+
+		</div>
+		<div style="clear: both"></div>
+		<div class="footer"> copyright © 2019, Jibannet Co., Ltd</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="index.js"></script>
+		<script type="text/javascript">
+
+
+		</script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Page Title</title>
+
+	<script src="../asset/js/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript">
+		function changeSize() {
+			console.log("start inside frmae")
+
+
+			var L = parseInt($(".container").css('left').replace('px', ''));
+			console.log(L);
+			if (L < -200) {
+				$(".container").animate({'left': '0px'});
+			} else {
+				$(".container").animate({'left': '-320px'});
+			}
+
+		}
+
+	</script>
+	<style type="text/css">
+		.container {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		
+		.small {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 310px;
+			height: 260px;
+			overflow: hidden;
+		}
+		
+		.large {
+			position: absolute;
+			left: 320px;
+			top: 00px;
+			width: 620px;
+			height: 540px;
+			overflow: auto;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="small">
+			<img src="../images/p4.png" />
+		</div>
+
+
+		<div class="large">
+			進捗状況の詳細を表示します。
+		</div>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,681 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Jibannet Knowledge Base</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!--link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css"-->
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style type="text/css">
+		body {
+			font-size: 16px;
+			color: #003300;
+			font-family: sans-serif;
+		}
+		/* Layout */
+		
+		.contentHeader {
+			width: 100%;
+			text-align: center;
+			height: 80px;
+			box-shadow: 0px 10px 10px #a0a0a0;
+		}
+		
+		.contentHeader img {
+			margin-top: -10px;
+		}
+		
+		.contentContainer {
+			position: absolute;
+			width: 100%;
+			height: 1000px;
+			top: 95px;
+			left: 0px;
+		}
+		
+		.menuPane {
+			width: 20%;
+			height: 100%;
+			float: left;
+			background-color: #CCC;
+		}
+		
+		.listPane {
+			width: 20%;
+			height: 100%;
+			float: left;
+			background-color: #EEE;
+			border-right: 1px solid #999;
+		}
+		
+		.menuPane li {
+			padding: 4px;
+			cursor: pointer;
+		}
+		
+		#menuList li:hover {
+			background-color: #ff6666;
+			color: white;
+		}
+		
+		#list li {
+			padding: 4px;
+			cursor: pointer;
+		}
+		
+		#list li:hover {
+			background-color: #6699ff;
+			color: white;
+		}
+		
+		#menuList .selected {
+			background-color: #ff6666;
+			color: white;
+		}
+		
+		#list .selected {
+			background-color: #6699ff;
+			color: white;
+		}
+		/* Common parts */
+		
+		.gTitle {
+			width: 100%;
+			font-size: 1.4em;
+			height: 40px;
+			padding: 20px;
+		}
+		
+		.gTitle input {
+			width: 80%;
+			font-size: 0.55em;
+		}
+		/* Tool Buttons */
+		
+		#addArticle {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			opacity: 0.4;
+			cursor: pointer;
+			;
+		}
+		
+		#addArticle:hover {
+			opacity: 1;
+		}
+		
+		.bodyPane {
+			width: 50%;
+			height: 100%;
+			float: left;
+			background-color: #FFF;
+			padding: 20px;
+		}
+		
+		.articleTitle {
+			font-size: 1.25em;
+			color: darkred;
+			border-bottom: 1px solid darkred;
+			margin-bottom: 20px;
+		}
+		
+		.articleBody {
+			margin-left: 40px;
+		}
+		
+		.tools {
+			width: 90%;
+			height: 40px;
+			margin-left: 40px;
+			margin-top: 40px;
+		}
+		
+		.toolButton,
+		.saveButton {
+			background-color: #666699;
+			color: white;
+			width: auto;
+			height: 18px;
+			text-align: center;
+			float: left;
+			padding: 6px;
+			margin: 2px;
+			font-size: 0.8em;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		
+		.toolButton:hover {
+			opacity: 1;
+		}
+		
+		.savePane {
+			width: 90%;
+			height: 40px;
+			margin-left: 40px;
+			margin-top: 40px;
+		}
+		
+		.saveButton {
+			background-color: #669900;
+			width: 120px;
+		}
+		
+		.saveButton:hover {
+			opacity: 1;
+		}
+		/* Tag Part */
+		.tagWrapper {
+			width: 100%;
+			height: 30px;
+			text-align: right;
+			margin-bottom: 10px;
+		}
+		
+		.articleTags {
+			width: 80%;
+			height: 30px;
+			text-align: right;
+			margin-bottom: 10px;
+			float: right;
+		}
+		
+		.tagName{
+			background-color: #ff6666;
+			color: white;
+			width: auto;
+			height: 18px;
+			text-align: center;
+			float: right;
+			padding: 4px;
+			margin-right: 4px;
+			font-size: 0.8em;
+			border-radius: 6px;
+			opacity: 0.8;
+			cursor: pointer;
+		}
+		.addTag {
+			background-color: #ff6666;
+			color: white;
+			width: auto;
+			height: 18px;
+			text-align: center;
+			float: right;
+			padding: 4px;
+			margin-right: 4px;
+			font-size: 0.8em;
+			border-radius: 6px;
+			opacity: 0.8;
+			cursor: pointer;
+		}
+		
+		.addTag {
+			border-radius: 10px;
+			opacity: 1;
+		}
+		/* parts style */
+		
+		.dynamicArticle .articleTitle {
+			color: darkred;
+			font-size: 1.4em;
+		}
+		
+		.dynamicArticle .subTitle {
+			color: darkred;
+			font-weight: bold;
+			margin: 20px 0 10px 40px;
+		}
+		
+		.dynamicArticle .body {
+			color: #003300;
+			margin-left: 40px;
+		}
+		
+		.dynamicArticle .note {
+			color: #495349;
+			margin: 10px 0 10px 80px;
+			padding: 8px;
+			border-left: 8px solid #90a09a;
+			font-size: 0.85em;
+			color: #3c6d4b;
+		}
+		
+		.dynamicArticle .image {
+			margin: 20px 20px 20px 60px;
+			width: 100%;
+			height: 50px;
+			border: dotted 2px gray;
+			text-align: center;
+			padding-top: 12px;
+		}
+		
+		.dynamicArticle .link {
+			color: #495349;
+			margin: 10px 0 10px 80px;
+			padding: 8px;
+			font-size: 0.85em;
+			color: #42387c;
+		}
+		/**/
+		
+		#logIn {
+			position: fixed;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+			background-color: white;
+		}
+		
+		.login100-form-btn {
+			text-align: center;
+			font-size: 1.4em;
+			font-weight: 100;
+			padding-top: 10px;
+			height: 40px;
+			cursor: pointer;
+		}
+		
+		.input100 {
+			border: 0;
+		}
+		
+		#searchbox {
+			position: absolute;
+			top: 30px;
+			right: 10px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+	<div class='contentHeader'>
+		<img id="logo" src="img/KB_sjs2.png" />
+		<input id="searchbox" type="search" results="10" placeholder="検索..." />
+	</div>
+
+	<div class="contentContainer">
+
+		<!--  Left side div  -->
+		<div class="menuPane">
+			<div class="gTitle">
+				項目（タグ）
+			</div>
+
+			<!--  From script div  -->
+			<ul id="menuList">
+				<li class="selected">事業内容</li>
+				<li>リフォーム事業</li>
+			</ul>
+
+		</div>
+
+		<!--  2nd title div  -->
+		<div class="listPane">
+
+			<div class="gTitle">
+				タイトル <br />
+				<img id="addArticle" src="img/sharp_add_circle_outline_black_18dp.png" />
+			</div>
+
+			<!--  From script div  -->
+			<ul id="list">
+				<li>事業内容</li>
+				<li class="selected">リフォーム事業</li>
+			</ul>
+		</div>
+
+		<div class="bodyPane">
+
+			<!--  Article div  -->
+			<div class="dynamicArticle">
+				<div class="articleTitle" contenteditable="true"></div>
+				
+				<div class="tagWrapper">
+					<div class="addTag">＋</div>
+					<div class="articleTags"></div>
+				</div>
+				
+				<div class="articleBody" contenteditable="true"></div>
+			</div>
+
+
+			<!--  Edit Tools div  -->
+			<div class="tools">
+				<div class="toolButton" id="addSubTitle">
+					＋ サブタイトル
+				</div>
+				<div class="toolButton" id="addBody">
+					＋ 本文
+				</div>
+				<div class="toolButton" id="addNote">
+					＋ 脚注
+				</div>
+				<div class="toolButton" id="addImage">
+					＋ 画像
+				</div>
+				<div class="toolButton" id="addLink">
+					＋ リンク
+				</div>
+				<div class="saveButton" id="saveButton">
+					保存
+				</div>
+
+			</div>
+			<!-- End tools  -->
+		</div>
+		<!--  End bodyPane  -->
+	</div>
+	<!--  End contentContainer  -->
+
+	<div id="logIn">
+
+		<div class="container-login100">
+			<form class="login100-form validate-form flex-sb flex-w">
+				<span class="login100-form-title p-b-51">
+						<img src="img/KB_sjs2.png" /><br /><br />Login
+					</span>
+
+
+				<div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+					<input class="input100" type="text" name="email" placeholder="eMail">
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+					<input class="input100" type="password" name="pass" placeholder="Password">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="flex-sb-m-18">
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+					</div>
+
+					<!--div>
+						<a href="#" class="txt1">
+								Forgot?
+							</a>
+					</div-->
+				</div>
+
+				<div class="container-login100-form-btn m-t-17">
+					<div class="login100-form-btn">
+						Login
+					</div>
+					<br /><br /> 製作中なので、login で入れます。
+				</div>
+
+			</form>
+		</div>
+
+
+
+	</div>
+
+
+
+
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
+
+	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<script type="text/javascript">
+		/* damy data */
+
+		var allTags = "ナレッジベース,事業内容,リフォーム事業,新SJS について";
+
+		var titleList = new Array(
+			"ナレッジベースの使い方1",
+			"ナレッジベースの使い方2",
+			"ナレッジベースの使い方3",
+			"ナレッジベースの使い方4",
+			"ナレッジベースの使い方5"
+		);
+		/* sample data from data base */
+		var article_1 = {};
+		article_1.id = 10002;
+		article_1.title = "ナレッジベースについて";
+		article_1.tags = "ナレッジベース,事業内容,リフォーム事業";
+		article_1.body = 'この内容はすべて編集可能です:<div><br></div><div>1)下のボタンを押すと、ブロックを追加できます。</div><div><br></div><div>2) 上のタイトルも編集可能です。</div><div><br></div><div>3) タグを追加すると、メニューに反映されます。</div><div><br></div><div>4) タグの文字を空にすると、タグは削除されます。</div>';
+
+
+
+		/* End of damy data */
+
+
+
+
+
+		/* generate tag part */
+		var html_tags = {};
+		html_tags.addButton = '';
+		html_tags.divStart = '<div class="tagName" contenteditable="true" onfocusout="tags()">';
+
+		/* parts bottons default setting */
+		var parts = {};
+		parts.subtitle = '<div class="subTitle" contenteditable="true">サブタイトル</div>';
+		parts.body = '<div class="body" contenteditable="true">本文</div>';
+		parts.note = '<div class="note" contenteditable="true">脚注</div>';
+		parts.image = '<div class="image" contenteditable="true">画像</div>';
+		parts.link = '<div class="link" contenteditable="true">リンク</div>';
+
+		/* defaykt artucke; page has loaded for the first time */
+		var article1 = {};
+		article1.id = 10002;
+		article1.title = "ナレッジベースについて";
+		article1.tags = "ナレッジベース,事業内容,リフォーム事業";
+		article1.body = 'この内容はすべて編集可能です:<div><br></div><div>1)下のボタンを押すと、ブロックを追加できます。</div><div><br></div><div>2) 上のタイトルも編集可能です。</div><div><br></div><div>3) タグを追加すると、メニューに反映されます。</div><div><br></div><div>4) タグの文字を空にすると、タグは削除されます。</div>';
+
+
+		/* meke new blank article */
+		var article = {};
+		article.id = 10001;
+		article.title = "タイトル";
+		article.tags = "ナレッジベース";
+		article.body = '本文';
+
+		function makeNewArticle() {
+			makeMenuList();
+			$(".articleTitle").html(article.title);
+			$(".articleTags").html(makeTagsPart());
+			$(".articleBody").html(article.body);
+		}
+
+		/* generate menu part */
+		function makeMenuList() {
+			var menuItemsArray = allTags.split(',');
+			var menuItems = '';
+			for (var i = 0; i < menuItemsArray.length; i++) {
+				if (i == 0) {
+					menuItems += '<li class="selected">';
+				} else {
+					menuItems += '<li>';
+				}
+				menuItems += menuItemsArray[i];
+				menuItems += '</li>'
+			}
+
+
+			$("#menuList").html(menuItems);
+		}
+
+		/* make list from menuList / tag*/
+		function makeList() {
+			var listHtml = "";
+			for (var i = 0; i < titleList.length; i++) {
+				if (i == 0) {
+					listHtml += '<li class="selected">';
+				} else {
+					listHtml += '<li>';
+				}
+				listHtml += titleList[i];
+				listHtml += '</li>';
+			}
+			//console.log('listHtml = ' + listHtml)
+			$("#list").html(listHtml);
+		}
+
+		function makeTagsPart() {
+			var html = html_tags.addButton;
+			var thisTags = article.tags.split(',');
+			for (var i = 0; i < thisTags.length; i++) {
+				if (thisTags[i] == '') {
+					continue;
+				}
+				html += html_tags.divStart;
+				html += thisTags[i];
+				html += '</div>';
+				$(".tagName").bind("focusout", function() {
+					//console.log($(".articleTags").html())
+				})
+
+			}
+			return html;
+		}
+
+		function removeTags(str) {
+			var tag = /<\/?[^>]+(>|$)/g;
+			var R = str.replace(tag, '@');
+			R = R.replace(/@@/g, ',');
+			R = R.replace(/@/g, '');
+			//console.log(R);
+			return R;
+		}
+
+		/* new tag has created; focus out from a tag */
+		function tags() {
+			console.log('tags start');
+			var cc = $(".articleTags").html();
+			cc = removeTags(cc);
+			cc = cc.replace("＋,", '');
+			var ccArray = cc.split(',');
+			var newArray = [];
+			var allTagsArray = allTags.split(',');
+			var newTag = true;
+			for (var i = 0; i < ccArray.length; i++) {
+				if (ccArray[i] == '') {
+					continue;
+				}
+				newArray.push(ccArray[i]);
+
+				/* check menuList */
+				newTag = true;
+				for (var j = 0; j < allTagsArray.length; j++) {
+					if (ccArray[i] == allTagsArray[j]) {
+						newTag = false;
+						break;
+					}
+				}
+
+				if (newTag == true) {
+					allTagsArray.push(ccArray[i]);
+					allTags = allTagsArray.toString();
+					makeMenuList();
+				}
+			}
+			article.tags = newArray.toString();
+			$(".articleTags").html(makeTagsPart());
+
+			/* menuList */
+
+			//console.log('tag is ' + ccArray.toString());
+		}
+
+		var html2;
+
+		$(document).ready(function() {
+			/* Set article contents */
+			makeMenuList();
+			makeList();
+			$(".articleTitle").html(article1.title);
+			$(".articleTags").html(makeTagsPart());
+			$(".articleBody").html(article1.body);
+
+			html2 = $(".dynamicArticle").html();
+
+			$("#saveButton").click(function() {
+				//console.log($(".dynamicArticle").html())
+			})
+
+			$("#addSubTitle").click(function() {
+				html2 += parts.subtitle;
+				$(".dynamicArticle").html(html2);
+			})
+			$("#addBody").click(function() {
+				html2 += parts.body;
+				$(".dynamicArticle").html(html2);
+			})
+			$("#addNote").click(function() {
+				html2 += parts.note;
+				$(".dynamicArticle").html(html2);
+			})
+			$("#addImage").click(function() {
+				html2 += parts.image;
+				$(".dynamicArticle").html(html2);
+			})
+			$("#addLink").click(function() {
+				html2 += parts.link;
+				$(".dynamicArticle").html(html2);
+			})
+
+			$(".addTag").click(function() {
+				console.log('addTag has clicked.')
+				$(".articleTags").append(html_tags.divStart + '新しいタグ</div>');
+			})
+
+			/* top right + button has clicked */
+			$("#addArticle").click(function() {
+
+				/* Save or not script, if article has changed */
+				/**/
+
+				makeNewArticle();
+			})
+
+			/* tags 
+			$(".tagName").bind("focusout", function(){
+				//console.log($(this).text())
+			})*/
+
+
+			$(".login100-form-btn").click(function() {
+				$("#logIn").css('display', 'none');
+			})
+
+		})
+
+	</script>
+
+
+</body>
+
+</html>

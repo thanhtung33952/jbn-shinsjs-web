@@ -1,0 +1,422 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900&amp;subset=japanese" rel="stylesheet">
+	<link rel="stylesheet" href="../css/index.css">
+	<style type="text/css">
+		a {
+			text-decoration: none;
+			color: #253b3a;
+		}
+		
+		.selectedItem {
+			font-weight: 500;
+			color: #993366;
+		}
+		
+
+		.leftPane {
+			height: 1800px;
+		}
+		.rightPane {
+			height: 1800px;
+		}
+		.mainPane {
+			height: 1800px;
+		}
+		.textOnly {
+			padding-top: 12px;
+			font-weight: 500;
+		}
+		._button2 {
+			float: left;
+			margin-top: -12px;
+		}
+	</style>
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+
+	<!-- Add your site or application content here -->
+
+	<div class="contentContainer">
+		<div class="header">
+			<img id="topLogo" src="../img/sjs2Logo.png" />
+			<div class="headerInformation">
+				〇〇様　｜
+				<a href="">ダッシュボード</a>　｜　<a href="">ログアウト</a>
+			</div>
+		</div>
+
+		<div class="breadCrumb">
+			トップ ＞ 取引先 ＞ 取引先の登録情報
+		</div>
+
+		<div class="mainPane">
+
+			<div class="leftPane">
+				<img class="_icon" src="../img/baseline_list_black_18dp.png" style="opacity: 0.4;" hspace="4" />
+				<div class="_sTitle">登録情報</div>
+				<div class="item">
+					<a href='company_01.html'>
+						<p><img id="" src="../img/baseline_play_arrow_black_18dp.png" style="opacity: 0.25;" align="center" /> 基本情報
+						</p>
+					</a>
+					</a>
+				</div>
+				<div class="item">
+
+					<p class='selectedItem'><img class='' id="" src="../img/baseline_play_arrow_red_18dp.png" style="opacity: 1;" align="center" /> 取引条件
+					</p>
+				</div>
+
+			</div>
+
+
+
+
+			<div class="centerPane">
+				<div class="_title">取引先の登録情報</div>
+
+				<div class="_bodyTitle">取引条件</div>
+
+				<p></p>
+				<!-- Form  -->
+
+
+				<hr /> 与信情報
+
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">与信限度額：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="eMail" value="90万円">
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">与信ステータス：</label>
+					</div>
+					<div class="col-75">
+						<span class="selectButton selected">受付中</span>
+						<!--selected-->
+						<span class="selectButton">受付停止（与信オーバー）</span>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">与信承認ログ：</label>
+					</div>
+					<div class="col-75">
+						<textarea>
+date, 与信受付停止, name
+date, 二次承認, name
+date, 一次承認, name
+date, 申請, name
+						</textarea>
+
+					</div>
+				</div>
+				
+				
+				<hr /> 反社情報
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">確認画面：</label>
+					</div>
+					<div class="col-75 textOnly">
+						<a href="" >URL of html</a>
+					</div>
+				</div>				
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">受付書類：</label>
+					</div>
+					<div class="col-75 textOnly">
+						<div class="_button _active _button2" id="upload">アップロード</div>　or <a href="" >URL of pdf</a>
+					</div>
+				</div>				
+
+				<hr /> 請求書郵送先
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">郵便番号：</label>
+					</div>
+					<div class="col-30">
+						<input type="text" id="cname" name="comName" placeholder="123-4567">
+					</div>
+					<div class="col-30">
+						<div class="_button _active" id="showAddress">住所を表示</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">都道府県：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="都道府県">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">市区郡：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="市区郡">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">地名番地：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="地名番地">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">ビル名：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="ビル名">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">郵送先担当者名：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="郵送先担当者名">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">支払人：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="支払人">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">請求方法：</label>
+					</div>
+					<div class="col-75">
+						<span class="selectButton selected">通常書式</span>
+						<!--selected-->
+						<span class="selectButton">？支払先書式？</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">出力単位：</label>
+					</div>
+					<div class="col-75">
+						<span class="selectButton selected">一括</span>
+						<span class="selectButton">物件</span>
+						<span class="selectButton">明細</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">締め日区分：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="末日">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">回収予定日：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="翌月末日">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">営業日区分：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="前営業日">
+					</div>
+				</div>
+
+				<hr /> 銀行口座情報
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">銀行名：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="銀行名">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">銀行コード：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="銀行コード">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">支店名：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="支店名">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">支店コード：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="支店コード">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">口座区分：</label>
+					</div>
+					<div class="col-75">
+						<span class="selectButton selected">普通</span>
+						<span class="selectButton">当座</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">口座番号：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="口座番号">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="fname">口座名義：</label>
+					</div>
+					<div class="col-75">
+						<input type="text" id="cname" name="eMail" placeholder="口座名義">
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+				<div class="row">
+					<br /><br />
+					<div class="_button" id="">登録を更新する</div>
+				</div>
+
+
+			</div>
+			<!-- End of centerPane -->
+
+			<div class="rightPane">
+				<img class="_icon" src="../img/knowledge.png" hspace="4" />
+				<div class="_sTitle">ナレッジベース</div>
+				<div class="kb_tag_field">
+					<span class="kb_tag">取引先の新規登録</span>
+				</div>
+				<p>タイトルをクリックすると、詳細を別ウインドウに表示します。</p>
+
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+				<div class="_nTitle">代理店とは</div>
+			</div>
+
+		</div>
+		<!-- end of mainPane -->
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<script src="js/vendor/modernizr-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+
+	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+	<script>
+		window.ga = function() {
+			ga.q.push(arguments)
+		};
+		ga.q = [];
+		ga.l = +new Date;
+		ga('create', 'UA-XXXXX-Y', 'auto');
+		ga('send', 'pageview')
+
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>

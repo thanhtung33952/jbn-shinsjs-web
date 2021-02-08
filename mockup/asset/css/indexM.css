@@ -1,0 +1,149 @@
+        body {
+            font-family:'Lucida Grande',
+            'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+            Meiryo, メイリオ, sans-serif;
+            background-color: #EEE;
+            
+            
+        }
+        .container { display: block; position: relative; width: 100%; height: 100%; margin: 0 auto;}
+        .header {display: block; width: 100%; height: 80px;
+        }
+        ._title {
+            text-align: center; margin-top: 20px;
+            text-shadow: 4px 4px 4px rgba(150, 150, 150, 0.4);
+            font-size: 1.8em; color: #332914;
+        }
+        
+        
+
+
+        /* INFOR
+        .infoContainer{display: block; width: 300px; height: 100%; position: absolute;
+            left: 60px; top: 80px;
+        }   
+    	.dateInfo {display:block; position:absolute; width:290px; height:30px;
+    		left:10px; top:30px; border: 0px solid black; padding-top: 4px; font-weight: bold; color: #666;}
+        .dateInfoBack {position: absolute; display: block; left:0px; top:30px;
+            background-color:#FFF; width: 300px; height: 30px; opacity: 0.7;}
+    	/* TOP 
+    	.topInfo {display:block; position:absolute; width:290px; height:100px;
+    		left:10px; top:65px; border: 0px solid black;
+    	}
+        .topInfoBack {position: absolute; display: block; left:0px; top:65px;
+            background-color:#FFF; width: 300px; height: 100px; opacity: 0.7;}
+            
+        /* MIDDLE   
+        .middleInfo {display:block; position:absolute; width:290px; height:100px;
+    		left:10px; top:170px; border: 0px solid black;
+    	}
+        .middleInfoBack {position: absolute; display: block;
+            left:0px; top:170px;
+            background-color:#FFF; width: 300px; height: 100px; opacity: 0.7;}
+        /* BOTTOM 
+        .bottomInfo {display:block; position:absolute; width:290px; height:100px;
+    		left:10px; top:275px; border: 0px solid black;
+    	}
+        .bottomInfoBack {position: absolute; display: block;
+            left:0px; top:275px;
+            background-color:#FFF; width: 300px; height: 100px; opacity: 0.7;}
+        
+        .east {display: block; width: 40px; float: left;}
+        .centerP {display: block; width: 100px; float: left; text-align: center;
+            font-size: 1.6em; margin: 0 auto; color: #666;}
+        .west {display: block; width: 100px; float: left; text-align: center;
+            font-size: 1.6em; margin: 0 auto; color: #666;}
+        .arrow{display: block; float: left;}
+        ._text {width: 100%; text-align: center; margin: 0px; padding: 0px;}
+        */
+        .wrapper {display: block; width: 100%; margin: 0 auto;  height: 100%;}
+        .dashboard {display: block; width: 320px; height:auto; margin: 0px auto;
+        	top: 80px; position:absolute;}
+        
+        .boxElement {display: block; width: 300px; height: 260px; border: 1px solid #999;
+            border-radius: 8px; background-color: #FFF; overflow: hidden;
+            padding: 0; position: absolute; }
+		.boxElement_map {display: block; width: 300px; height: 260px; 
+		border: 1px solid #999;
+            border-radius: 8px; background-color: #FFF;
+            padding: 0px; overflow: hidden; }
+ 
+        
+        /* Layout of boxElement */
+        #P11 { left: 0px; top: 0px;}
+		
+        #P12 { left: 0px; top: 270px;}
+        
+        #P13 { left: 0px; top: 540px; }
+ 
+        #P21 { left: 0px; top: 810px;}
+        #P22 { left: 0px; top: 1080px;}
+        #P23 { left: 0px; top: 1350px;}
+        
+        .zoomButton { position: absolute; right: 4px; top: 4px; width: 32px;
+			height: 32px; opacity: 0.5; }
+        .boxTitle { position: absolute; width: 100%; top: 0px; }
+		.boxTop { font-weight: bold; width:100%; text-align: center; padding: 0px;
+			margin-top: 6px; }
+        
+        /* to stretch the container div to contain floated list */
+        
+        ul#navlist
+        { list-style: none; padding: 0; margin: 0 auto; width: 80%; font-size: 0.9em;  }
+        
+        ul#navlist li
+        { display: block; float: left;  width: 18%; margin: 0 1% 0 1%; padding: 0; text-align: center;}
+        
+        ul#navlist li a
+        { display: block; width: 90%; padding: 0.5em; border-bottom: 4px  #333 solid; color: #000; text-decoration: none;  }
+        
+        #navcontainer>ul#navlist li a { width: auto; }
+        
+        ul#navlist li#active a
+        { border-bottom-color: red; }
+        
+        ul#navlist li a:hover, ul#navlist li#active a:hover
+        {  border-color: red; color: red;}
+
+        .footer { height: 80px; width: 100%; text-align: center; color: #666; font-size: 0.8em; 
+            display: block; position: absolute; border-top: 1px solid #333333; top: 1620px;}
+            
+        .fullMap {display: block; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; background-color: white; visibility: hidden;}
+		
+		/* P11L */
+		#gOrT_P11L {top: 160px;}
+		.largePanel {display: block; width:100%; height: 100%; position: absolute; left: 0px; top: 0px; }
+		#P11L {visibility: hidden; }
+		#leftSide{ position: absolute; left: 4px; top: 158px; }
+		#graphContainer{ position: absolute; left: 30px; top: 180px; width: 580px;
+			height: 400px; overflow: hidden;}
+		#graph { position: absolute; right: 0px; top: 10px; width: 1190px;}
+		#observatories { position: absolute; top: 90px; left: 8px;}
+		#unit { position: absolute; left: 10px; bottom: 4px;}
+		
+		.alertTop { display: block; position: absolute; width: 100%; height: 24px; text-align: center;
+			background-color: #669900; color: white; font-size: 0.8em; padding-top: 4px; font-weight: bold;}
+			
+		/* Rain fall Element */
+		#testTube { position: absolute; left: 20px; top: 70px; opacity: 0.6;}
+		#P12L { display: block; position: absolute; visibility: hidden; }
+		#P12S {display: block; position: absolute; width: 280px; left:20px; height: 240px;}
+		#P12subMenu {}
+		#P12Limg {position: absolute; top: 140px; left: 0px; width: 580px;}
+		#rainInfo { position: absolute; left: 60px; top:180px; font-weight: lighter;}
+		#rainInfo2 { position: absolute; left: 180px; top:180px; font-weight: lighter;}
+		.ammount {font-size: 40px;font-weight: lighter;}
+		.rainUnit {font-size: 10px; }
+		
+			
+		/* sub menu */
+		#rainMenu {visibility: hidden;}
+		.subMenu {display: block; position: absolute; top: 40px; width: 615px; text-align: center; color: #666666; 
+			box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+			-moz-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+			r-webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+			font-weight: bold; font-size: 12px; background-color: #E6E6E6; height: 20px; padding-top: 4px;
+		}
+		
+		/* Graph Canvas */
+		#canvas_G {display: block; position: absolute; width: 580px; height: 320px; top: 200px; left: 10px;}
